@@ -1,0 +1,224 @@
+/* Base Reset and Typography */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Nodux B2B Official Corporate Colors - LIGHT MODE */
+  --bg-primary: #F0F4F8;    /* Softer, slightly blueish gray instead of white */
+  --bg-secondary: #E2E8F0;  /* Richer slate for contrast */
+  --surface-bg: #FFFFFF;    /* Pure white only for floating cards */
+  --surface-header: #0F172A; /* Corporate Dark Slate Header for all modes */
+  
+  --text-dark: #0F172A;
+  --text-body: #334155;
+  --border-color: #CBD5E1;
+  
+  --brand-blue: #2563EB;
+  --brand-blue-hover: #1D4ED8;
+  
+  --whatsapp-green: #10B981;
+  --whatsapp-green-hover: #059669;
+  
+  /* Layout */
+  --max-width: 1280px;
+  
+  /* Utilities */
+  --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -1px rgba(15, 23, 42, 0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.1), 0 4px 6px -2px rgba(15, 23, 42, 0.05);
+}
+
+[data-theme='dark'] {
+  --bg-primary: #0B1120;    /* Very dark blue-gray */
+  --bg-secondary: #1E293B;  /* Slate 800 */
+  --surface-bg: #0F172A;    /* Slate 900 for cards */
+  --surface-header: #0F172A;
+  
+  --text-dark: #F8FAFC;     /* Light text for headings */
+  --text-body: #94A3B8;     /* Muted text for body */
+  --border-color: #334155;
+  
+  --brand-blue: #3B82F6;
+  --brand-blue-hover: #60A5FA;
+  
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-body);
+  line-height: 1.6;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-dark);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+a {
+  text-decoration: none;
+  color: var(--brand-blue);
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--brand-blue-hover);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+/* Card Surface */
+.surface {
+  background: var(--surface-bg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  border-radius: var(--radius-md);
+  color: var(--text-body);
+}
+
+.surface h1, .surface h2, .surface h3, .surface h4 {
+  color: var(--text-dark);
+}
+
+/* Base Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.625rem 1.25rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: var(--transition);
+  gap: 0.5rem;
+}
+
+.btn-primary {
+  background: var(--brand-blue);
+  color: #FFFFFF;
+}
+
+.btn-primary:hover {
+  background: var(--brand-blue-hover);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+.btn-success {
+  background: var(--whatsapp-green);
+  color: #FFFFFF;
+}
+
+.btn-success:hover {
+  background: var(--whatsapp-green-hover);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-dark);
+}
+
+.btn-outline:hover {
+  background: var(--bg-secondary);
+  border-color: var(--text-body);
+}
+
+/* Micro-animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+/* Layout helpers */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Form Elements */
+input, select {
+  font-family: inherit;
+  background: var(--surface-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-dark);
+  padding: 0.625rem 1rem;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+  font-size: 0.875rem;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--brand-blue);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: var(--whatsapp-green);
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+  z-index: 100;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  color: white;
+}
