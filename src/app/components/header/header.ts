@@ -72,14 +72,15 @@ import { RouterModule } from '@angular/router';
     }
     
     .brand-logo {
-      height: 60px;
+      height: 48px;
       width: auto;
-      object-fit: cover;
-      transform: scale(1.15);
-      margin-left: 0.5rem;
-      /* CSS Hack to make white backgrounds transparent and keep logo color */
-      filter: invert(1) hue-rotate(180deg) brightness(1.5);
+      object-fit: contain;
       mix-blend-mode: screen;
+      transition: transform 0.25s ease;
+    }
+
+    .brand-logo:hover {
+      transform: scale(1.04);
     }
     
     .nav-links {

@@ -8,6 +8,9 @@ import { CommonModule } from '@angular/common';
   template: `
     <div class="about-container container">
       <div class="about-hero">
+        <div class="about-logo-wrapper">
+          <img src="/assets/images/logo.jpg" alt="Logo Oficial Nodux" class="about-hero-logo" />
+        </div>
         <h1 class="page-title">Sobre <span class="brand-text">Nodux</span></h1>
         <p class="subtitle">Profesionalizando la gestión comercial y logística de Pymes y distribuidoras.</p>
       </div>
@@ -60,6 +63,23 @@ import { CommonModule } from '@angular/common';
     .about-hero {
       text-align: center;
       margin-bottom: 4rem;
+    }
+    
+    .about-logo-wrapper {
+      display: inline-block;
+      margin-bottom: 1.75rem;
+      border-radius: 20px;
+      padding: 6px;
+      background: linear-gradient(135deg, rgba(0, 229, 255, 0.4), rgba(37, 99, 235, 0.2));
+      box-shadow: 0 10px 30px rgba(0, 229, 255, 0.2);
+    }
+    
+    .about-hero-logo {
+      width: 120px;
+      height: 120px;
+      border-radius: 16px;
+      object-fit: cover;
+      display: block;
     }
     
     .page-title {

@@ -20,7 +20,7 @@ import { RouterModule } from '@angular/router';
       <footer class="footer">
         <div class="container footer-content">
           <div class="footer-col brand-col">
-            <img src="/assets/images/logo-icon.png" alt="Nodux Icon" class="footer-logo" />
+            <img src="/assets/images/logo.png" alt="Nodux Logo" class="footer-logo" />
             <p>Conectamos la realidad física del negocio con la ingeniería de datos y la automatización. Digitaliza tu logística hoy.</p>
           </div>
           <div class="footer-col">
@@ -101,9 +101,9 @@ import { RouterModule } from '@angular/router';
     }
     
     .footer-logo {
-      height: 48px;
+      height: 44px;
       width: auto;
-      filter: invert(1) hue-rotate(180deg) brightness(1.5);
+      object-fit: contain;
       mix-blend-mode: screen;
       margin-bottom: 1rem;
     }
